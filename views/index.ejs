@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Sever</title>
+    <!-- <link rel="icon" type="image/png" href="https://www.google.com/favicon.ico"> -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="main w-full bg-stone-800 min-h-screen">
+      <div class="logo flex  items-center">
+        <lord-icon
+    src="https://cdn.lordicon.com/veoexymv.json"
+    trigger="hover"
+    style="width:110px;height:110px">
+</lord-icon>
+<h1 class="text-3xl font-semibold text-white hover:font-bold">Documents Sever</h1>
+      </div>
+      <div class="form p-10 text-white h-[300px]">
+        <form action="/create" method="post">
+          <input
+            class="w-full py-3 rounded-md px-5 bg-stone-600 block outline-none"
+            type="text"
+            placeholder="Title the Task"
+            name="title"
+          />
+          <textarea
+            class="w-full rounded-md py-3 px-5 bg-stone-600 block resize-none mt-3 outline-none"
+            placeholder="write a Task in Daily life"
+            name="details"
+          ></textarea>
+          <input class=" hover:ease-out duration-300 hover:py-3 hover:px-5 hover:mt-5  mt-3 px-4 py-2 bg-blue-600 rounded-md" type="submit" value="Create Task" />
+        </form>
+      </div>
+      <div class="task p-10 flex flex-row gap-10 flex-wrap">
+
+        <% if(files.length > 0){ %>
+           <% files.forEach((item)=>{ %>
+                <div class="card w-64  bg-stone-800 px-13 py-3 rounded-md hover: ease-in duration-500 hover:bg-stone-900  hover:shadow-2xl">
+                  
+                    <h1 class="text-white font-semibold text-xl text-center tracking-tighter hover:text-black"><%= item %> </h1>
+                  <div>
+                    <a href="/file/<%= item %>" class="text-blue-600 tracking-tighter hover:text-blue-400 hover:font-bold p-4 inline-block mt-2">Read More!</a>
+                    <a href="/edit/<%= item %>" class="text-zinc-400 hover:text-green-500 hover:font-bold tracking-tighter p-4 inline-block mt-2">Edit Filename</a>
+                    <a href="/delete/<%= item %>" class="text-red-900 hover:text-red-400 font-bold tracking-tighter p-4 inline-block mt-2">  Delete </a>
+                  </div>
+                  
+                </div>
+           <% }) %>
+
+        <%  } else{ %>
+            <h3 class="items-center justify-center text-2xl text-blue-500 " >No Tasks Yet!</h3>
+       <% }  %>
+
+
+
+
+
+
+
+
+
+
+
+        <% files.forEach(item => { %>
+          <%  if(files.length > 0){ %>
+              
+         <%   } else { %>
+              
+          <%  } %>
+        <%  }); %>
+     
+
+       
+      </div>
+    </div>
+  </body>
+</html>

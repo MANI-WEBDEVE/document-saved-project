@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Show</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="main min-h-screen bg-stone-800">
+      <div
+        class="logo text-4xl bolder text-blue-600 inline-block m-6 hover:text-blue-400 hover:underline underline-offset-4 hover:ease-in duration-200"
+      >
+        <a href="/">Home</a>
+      </div>
+      <div class="context flex flex-col w-full">
+        <h1 class="p-4 text-3xl tracking-tighter text-white bolder">
+          <%= filename %>
+        </h1>
+        <p class="text-white text-xl tracking-tighter p-2 inline-block mt-3">
+          <%= filedata%>
+        </p>
+        </div>
+    </div>
+  </body>
+</html>

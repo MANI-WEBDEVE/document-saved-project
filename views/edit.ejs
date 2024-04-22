@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Rename</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="main min-h-screen bg-stone-800 w-full flex flex-col justify-center items-center ">
+        <a class="text-semibold text-blue-600 tracking-tighter text-3xl p-5 text-center hover:text-yellow-400 hover:font-semibold" href="/">File Rename</a>
+        <form action="/edit" method="post" class="flex flex-col items-center justify-center ">
+
+          <input class="w-80 px-10 py-3 rounded-md  bg-stone-500 mb-3" type="text" name="previous" placeholder="Previous File Name" value="<%= filename %>" >
+          <input class="w-80 px-10 py-3 rounded-md  bg-stone-500" type="text" name="newname" placeholder="Rename File Name">
+          
+          <!-- button input -->
+          <input type="submit" class="inline-block hover:ease-out duration-300 hover:py-3 hover:px-5 hover:mt-5  mt-3 px-4 py-2 bg-blue-600 rounded-md hover:bg-yellow-500 hover:font-bold hover:text-white w-[120px] " value="Change">
+        </form>
+        </div>
+    </div>
+  </body>
+</html>
+ 
